@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import tw, { styled } from 'twin.macro';
 
-import LinkBox from '@/pages/home/LinkBox';
+import LinkBox from '@/components/home/LinkBox';
 
 const Home = () => {
   return (

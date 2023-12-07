@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Home from '@/pages/home';
+import Home from '@/components/home';
 
 const page = () => {
   return <Home></Home>;
