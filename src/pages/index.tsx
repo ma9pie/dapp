@@ -1,41 +1,20 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import tw, { styled } from 'twin.macro';
 
+import Text from '@/components/common/Text';
 import LinkBox from '@/components/home/LinkBox';
 
 const Home = () => {
   return (
     <Wrapper>
-      <LogoBox>
-        <Link
-          className="flex gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          By
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            className="dark:invert"
-            width={100}
-            height={24}
-            priority
-          />
-        </Link>
-      </LogoBox>
+      <Header>
+        <w3m-button></w3m-button>
+      </Header>
 
       <ContentWrapper>
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        ></Image>
+        <Text className="dark:drop-shadow-[0_0_0.3rem_#ffffff70]" white>
+          DApp
+        </Text>
       </ContentWrapper>
 
       <LinkContainer>
@@ -70,15 +49,13 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.main`
-  ${tw`flex min-h-screen flex-col items-center justify-between p-24`};
+  ${tw`flex min-h-screen flex-col justify-between p-6`};
 `;
-const LogoBox = styled.div`
-  ${tw`flex w-full bg-gradient-to-t from-white via-white`};
-  ${tw`lg:(static h-auto w-auto bg-none)`};
-  ${tw`dark:(from-black via-black)`};
+const Header = styled.div`
+  ${tw`flex justify-end`};
 `;
 const ContentWrapper = styled.div`
-  ${tw`relative flex place-items-center z-[0]`};
+  ${tw`relative flex justify-center items-center z-[0] min-h-[360px]`};
   &::before {
     ${tw`absolute h-[300px] w-[480px] -translate-x-1/2 rounded-full bg-gradient-radial from-white to-transparent blur-2xl content-['']`};
     ${tw`dark:(bg-gradient-to-br from-transparent to-blue-700 opacity-10)`};
@@ -90,6 +67,6 @@ const ContentWrapper = styled.div`
   }
 `;
 const LinkContainer = styled.div`
-  ${tw`mb-32 grid`};
+  ${tw`grid`};
   ${tw`lg:(max-w-5xl w-full mb-0 grid-cols-4 text-left)`};
 `;
