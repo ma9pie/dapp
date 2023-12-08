@@ -2,12 +2,14 @@ import React from 'react';
 import tw, { styled } from 'twin.macro';
 
 import Text from '@/components/common/Text';
+import ThemeToggle from '@/components/common/ThemeToggle';
 import LinkBox from '@/components/home/LinkBox';
 
 const Home = () => {
   return (
     <Wrapper>
       <Header>
+        <ThemeToggle></ThemeToggle>
         <w3m-button></w3m-button>
       </Header>
 

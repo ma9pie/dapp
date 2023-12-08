@@ -3,8 +3,14 @@ import React, { ReactNode } from 'react';
 
 interface Props {
   className?: string;
-  type?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
   size?: 'sm' | 'md' | 'lg';
+  color?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'danger';
   radius?: 'none' | 'sm' | 'md' | 'lg' | 'full';
   full?: boolean;
   disabled?: boolean;
@@ -14,8 +20,8 @@ interface Props {
 
 const Component = ({
   className,
-  type,
   size,
+  color,
   radius,
   full,
   disabled,
@@ -25,7 +31,7 @@ const Component = ({
   return (
     <span className={className}>
       <Button
-        color={type}
+        color={color}
         size={size}
         radius={radius}
         fullWidth={full}
