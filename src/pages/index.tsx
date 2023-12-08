@@ -12,7 +12,11 @@ const Home = () => {
       </Header>
 
       <ContentWrapper>
-        <Text className="dark:drop-shadow-[0_0_0.3rem_#ffffff70]" white>
+        <Text
+          className="dark:drop-shadow-[0_0_0.3rem_#ffffff70]"
+          semibold
+          size={72}
+        >
           DApp
         </Text>
       </ContentWrapper>
@@ -49,10 +53,10 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.main`
-  ${tw`flex min-h-screen flex-col justify-between p-6`};
+  ${tw`flex items-center min-h-screen flex-col justify-between p-6`};
 `;
 const Header = styled.div`
-  ${tw`flex justify-end`};
+  ${tw`flex justify-end w-full`};
 `;
 const ContentWrapper = styled.div`
   ${tw`relative flex justify-center items-center z-[0] min-h-[360px]`};
