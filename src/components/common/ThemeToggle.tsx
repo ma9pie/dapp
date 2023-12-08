@@ -4,8 +4,8 @@ import { FiSun } from 'react-icons/fi';
 import { FiMoon } from 'react-icons/fi';
 
 import Toggle from '@/components/common/Toggle';
-import { Theme } from '@/types';
 import { themeAtom } from '@/states';
+import { Theme } from '@/types';
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useAtom(themeAtom);
