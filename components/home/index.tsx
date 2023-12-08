@@ -78,7 +78,7 @@ const LogoBox = styled.div`
   ${tw`dark:(from-black via-black)`};
 `;
 const ContentWrapper = styled.div`
-  ${tw`relative flex place-items-center z-[-1]`};
+  ${tw`relative flex place-items-center z-[0]`};
   &::before {
     ${tw`absolute h-[300px] w-[480px] -translate-x-1/2 rounded-full bg-gradient-radial from-white to-transparent blur-2xl content-['']`};
     ${tw`dark:(bg-gradient-to-br from-transparent to-blue-700 opacity-10)`};
