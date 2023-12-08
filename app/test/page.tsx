@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 
+import Test from '@/components/test';
+
 const page = () => {
-  return <div>page</div>;
+  return <Test></Test>;
 };
 
 export default page;
