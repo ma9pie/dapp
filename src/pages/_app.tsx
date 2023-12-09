@@ -7,17 +7,17 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 
-import Web3Modal from '@/components/modals/Web3Modal';
+import Web3ModalProvider from '@/components/modals/Web3ModalProvider';
 
 const App = (props: AppProps) => {
   return (
-    <Web3Modal>
+    <Web3ModalProvider>
       <NextUIProvider>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Inner {...props}></Inner>
         </ThemeProvider>
       </NextUIProvider>
-    </Web3Modal>
+    </Web3ModalProvider>
   );
 };
 

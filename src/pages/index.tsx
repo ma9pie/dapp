@@ -10,7 +10,8 @@ const Home = () => {
     <Wrapper>
       <Header>
         <ThemeToggle></ThemeToggle>
-        <w3m-button></w3m-button>
+        <w3m-network-button></w3m-network-button>
+        <w3m-button balance="hide"></w3m-button>
       </Header>
 
       <ContentWrapper>
@@ -58,7 +59,7 @@ const Wrapper = styled.main`
   ${tw`flex items-center min-h-screen flex-col justify-between p-6`};
 `;
 const Header = styled.div`
-  ${tw`flex justify-end w-full`};
+  ${tw`flex justify-end w-full h-10`};
 `;
 const ContentWrapper = styled.div`
   ${tw`relative flex justify-center items-center min-h-[360px]`};
