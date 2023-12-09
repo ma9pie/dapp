@@ -1,14 +1,10 @@
-import {
-  createWeb3Modal,
-  defaultWagmiConfig,
-  useWeb3ModalState,
-} from '@web3modal/wagmi/react';
-import { ReactNode, useEffect, useRef } from 'react';
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
+import { ReactNode } from 'react';
 import { arbitrum, mainnet, polygon, zkSync } from 'viem/chains';
 import { WagmiConfig } from 'wagmi';
 
 // 1. Get projectId at https://cloud.walletconnect.com
-const projectId = 'd0e232a6d24f2c12bbf9be0c47a10a93';
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!;
 
 // 2. Create wagmiConfig
 const metadata = {
@@ -34,13 +30,6 @@ interface Props {
 }
 
 const Web3ModalProvider = ({ children }: Props) => {
-  const ref = useRef();
-  const { open } = useWeb3ModalState();
-
-  useEffect(() => {
-    const tmp = document.getElementsByTagName('wui-list-wallet');
-  }, [open]);
-
   return <WagmiConfig config={wagmiConfig}>{children}</WagmiConfig>;
 };
 
