@@ -6,18 +6,22 @@ import { ThemeProvider } from 'next-themes';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
+import { WagmiConfig } from 'wagmi';
 
-import Web3ModalProvider from '@/components/modals/Web3ModalProvider';
+import ModalProvider from '@/components/providers/ModalProvider';
+import { wagmiConfig } from '@/utils';
 
 const App = (props: AppProps) => {
   return (
-    <Web3ModalProvider>
+    <WagmiConfig config={wagmiConfig}>
       <NextUIProvider>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <Inner {...props}></Inner>
+          <ModalProvider>
+            <Inner {...props}></Inner>
+          </ModalProvider>
         </ThemeProvider>
       </NextUIProvider>
-    </Web3ModalProvider>
+    </WagmiConfig>
   );
 };
 

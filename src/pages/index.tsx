@@ -1,17 +1,22 @@
 import React from 'react';
 import tw, { styled } from 'twin.macro';
 
+import Button from '@/components/common/buttons/Button';
 import Text from '@/components/common/Text';
 import ThemeToggle from '@/components/common/ThemeToggle';
 import LinkBox from '@/components/home/LinkBox';
+import useWallet from '@/hooks/useWallet';
 
 const Home = () => {
+  const { openConnectWalletModal } = useWallet();
+
   return (
     <Wrapper>
       <Header>
         <ThemeToggle></ThemeToggle>
-        <w3m-network-button></w3m-network-button>
-        <w3m-button balance="hide"></w3m-button>
+        <Button color="primary" onClick={openConnectWalletModal}>
+          Connect Wallet
+        </Button>
       </Header>
 
       <ContentWrapper>
@@ -59,7 +64,7 @@ const Wrapper = styled.main`
   ${tw`flex items-center min-h-screen flex-col justify-between p-6`};
 `;
 const Header = styled.div`
-  ${tw`flex justify-end w-full h-10`};
+  ${tw`flex justify-end gap-2 w-full h-10`};
 `;
 const ContentWrapper = styled.div`
   ${tw`relative flex justify-center items-center min-h-[360px]`};
