@@ -1,10 +1,12 @@
 import '@/styles/globals.css';
-import tw, { styled } from 'twin.macro';
+
 import { NextUIProvider } from '@nextui-org/react';
-import type { AppProps } from 'next/app';
-import { themeAtom } from '@/states';
-import Web3Modal from '@/components/modals/Web3Modal';
 import { useAtom } from 'jotai';
+import type { AppProps } from 'next/app';
+import tw, { styled } from 'twin.macro';
+
+import Web3Modal from '@/components/modals/Web3Modal';
+import { themeAtom } from '@/states';
 
 const App = (props: AppProps) => {
   return (

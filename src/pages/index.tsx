@@ -61,16 +61,7 @@ const Header = styled.div`
   ${tw`flex justify-end w-full`};
 `;
 const ContentWrapper = styled.div`
-  ${tw`relative flex justify-center items-center z-[0] min-h-[360px]`};
-  &::before {
-    ${tw`absolute h-[300px] w-[480px] -translate-x-1/2 rounded-full bg-gradient-radial from-white to-transparent blur-2xl content-['']`};
-    ${tw`dark:(bg-gradient-to-br from-transparent to-blue-700 opacity-10)`};
-    ${tw`lg:h-[360px]`};
-  }
-  &::after {
-    ${tw`absolute -z-20 h-[180px] w-[240px] translate-x-1/3 bg-gradient-conic from-sky-200 via-blue-200 blur-2xl content-['']`};
-    ${tw`dark:(from-sky-900 via-[#0141ff] opacity-40)`};
-  }
+  ${tw`relative flex justify-center items-center min-h-[360px]`};
 `;
 const LinkContainer = styled.div`
   ${tw`grid`};
