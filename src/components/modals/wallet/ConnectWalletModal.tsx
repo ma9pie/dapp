@@ -18,7 +18,7 @@ const ConnectWalletModal = () => {
 
   useEffect(() => {
     if (address) closeModal();
-  }, [address, closeModal]);
+  }, [address]);
 
   return (
     <Wrapper>
