@@ -1,23 +1,23 @@
-import { Modal, ModalBody, ModalContent, ModalHeader } from '@nextui-org/react';
-import React, { useState } from 'react';
+import { Modal, ModalBody, ModalContent } from '@nextui-org/react';
+import React from 'react';
 
-import { ModalProps } from '@/types';
+import ModalHeader from '@/components/modals/ModalHeader';
+import useModal from '@/hooks/useModal';
 
-const Component = (props: ModalProps) => {
-  const [isOpen, setIsOpen] = useState(true);
+const Component = () => {
+  const { modal } = useModal();
 
   return (
     <Modal
-      isOpen={isOpen}
+      isOpen={modal.isOpen}
       backdrop="blur"
-      onOpenChange={(open) => {
-        setIsOpen(open);
-      }}
+      hideCloseButton
+      isDismissable={false}
     >
       <ModalContent>
-        <ModalHeader className="flex flex-col gap-1">{props.title}</ModalHeader>
-        <ModalBody className="mb-2">
-          {props.component && props.component()}
+        <ModalHeader title={modal.title}></ModalHeader>
+        <ModalBody className="px-4 pt-0 pb-4">
+          {modal.component && modal.component()}
         </ModalBody>
       </ModalContent>
     </Modal>

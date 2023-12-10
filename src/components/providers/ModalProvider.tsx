@@ -1,40 +1,20 @@
 import styled from '@emotion/styled';
-import React, { createContext, ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 
 import Modal from '@/components/modals/Modal';
-import { ModalProps } from '@/types';
 
 type Props = {
   children: ReactNode;
 };
 
-type Modals = Map<string, ModalProps>;
-
-export const ModalContext = createContext({
-  modals: new Map(),
-  setModals: (state: Modals) => {},
-});
-
 const ModalProvider = ({ children }: Props) => {
-  const [modals, setModals] = useState<Modals>(new Map());
-
-  const modalList: ModalProps[] = [];
-
-  modals.forEach((value) => {
-    modalList.push(value);
-  });
-
   return (
-    <ModalContext.Provider value={{ modals, setModals }}>
+    <Container>
       <Container id="modal-manager">
-        {Array.from(modals).map(([key, props]) => (
-          <div key={key}>
-            <Modal {...props}></Modal>
-          </div>
-        ))}
+        <Modal></Modal>
       </Container>
       {children}
-    </ModalContext.Provider>
+    </Container>
   );
 };
 

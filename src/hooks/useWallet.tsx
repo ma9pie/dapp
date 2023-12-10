@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ConnectWallet from '@/components/modals/contents/ConnectWallet';
+import ConnectWalletModal from '@/components/modals/wallet/ConnectWalletModal';
 import useModal from '@/hooks/useModal';
 
 const useWallet = () => {
@@ -9,7 +9,7 @@ const useWallet = () => {
   const openConnectWalletModal = () => {
     openModal({
       title: 'Connect Wallet',
-      component: () => <ConnectWallet></ConnectWallet>,
+      component: () => <ConnectWalletModal></ConnectWalletModal>,
     });
   };
 

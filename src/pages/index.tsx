@@ -1,22 +1,17 @@
 import React from 'react';
 import tw, { styled } from 'twin.macro';
 
-import Button from '@/components/common/buttons/Button';
+import ConnectWalletBtn from '@/components/common/buttons/ConnectWalletBtn';
 import Text from '@/components/common/Text';
 import ThemeToggle from '@/components/common/ThemeToggle';
 import LinkBox from '@/components/home/LinkBox';
-import useWallet from '@/hooks/useWallet';
 
 const Home = () => {
-  const { openConnectWalletModal } = useWallet();
-
   return (
     <Wrapper>
       <Header>
         <ThemeToggle></ThemeToggle>
-        <Button color="primary" onClick={openConnectWalletModal}>
-          Connect Wallet
-        </Button>
+        <ConnectWalletBtn></ConnectWalletBtn>
       </Header>
 
       <ContentWrapper>
