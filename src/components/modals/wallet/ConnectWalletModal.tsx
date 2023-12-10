@@ -22,7 +22,7 @@ const ConnectWalletModal = () => {
 
   return (
     <Wrapper>
-      <Text black500>
+      <Text neutral500>
         Start by connecting with one of the wallets below. Be sure to store your
         private keys or seed phrase securely. Never share them with anyone.
       </Text>
@@ -76,7 +76,13 @@ const ConnectWalletModal = () => {
         })}
       </Grid>
 
-      {error && <Text medium>{error.message}</Text>}
+      <ErrorBox>
+        {error && (
+          <Text sm medium red500>
+            {error.message}
+          </Text>
+        )}
+      </ErrorBox>
     </Wrapper>
   );
 };
@@ -99,4 +105,7 @@ const IconBox = styled.div<{ size: number }>`
 const Grid = styled.div<{ size: number }>`
   ${tw`grid justify-center gap-4`};
   grid-template-columns: repeat(auto-fill, 100px);
+`;
+const ErrorBox = styled.div`
+  ${tw`h-5`};
 `;
