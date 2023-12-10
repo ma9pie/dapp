@@ -56,7 +56,8 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.main`
-  ${tw`flex items-center min-h-screen flex-col justify-between p-6`};
+  ${tw`flex items-center min-h-screen flex-col justify-between p-4`};
+  ${tw`sm:p-6`};
 `;
 const Header = styled.div`
   ${tw`flex justify-end gap-2 w-full h-10`};

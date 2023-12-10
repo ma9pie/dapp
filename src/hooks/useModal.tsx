@@ -11,7 +11,7 @@ export default function useModal() {
   };
 
   const closeModal = () => {
-    setModal({ isOpen: false });
+    setModal({ ...modal, isOpen: false });
   };
 
   return {

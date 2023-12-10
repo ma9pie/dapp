@@ -10,6 +10,7 @@ const Component = () => {
   return (
     <Modal
       isOpen={modal.isOpen}
+      size={modal.size}
       backdrop="blur"
       hideCloseButton
       isDismissable={false}

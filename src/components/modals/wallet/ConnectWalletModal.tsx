@@ -18,7 +18,7 @@ const ConnectWalletModal = () => {
 
   useEffect(() => {
     if (address) closeModal();
-  }, [address]);
+  }, [address, closeModal]);
 
   return (
     <Wrapper>
@@ -66,7 +66,7 @@ const ConnectWalletModal = () => {
                 )}
               </IconBox>
 
-              <Text sm>
+              <Text xs>
                 {isLoading && connector.id === pendingConnector?.id
                   ? 'connecting'
                   : name}
@@ -97,6 +97,6 @@ const IconBox = styled.div<{ size: number }>`
   height: ${(props) => `${props.size}px`};
 `;
 const Grid = styled.div<{ size: number }>`
-  ${tw`grid gap-4`};
-  grid-template-columns: repeat(auto-fill, 120px);
+  ${tw`grid justify-center gap-4`};
+  grid-template-columns: repeat(auto-fill, 100px);
 `;

@@ -1,19 +1,17 @@
 export interface ModalProps {
-  id?: string;
-  createdAt?: number;
   isOpen?: boolean;
+  size?:
+    | 'xs'
+    | 'sm'
+    | 'md'
+    | 'lg'
+    | 'xl'
+    | '2xl'
+    | '3xl'
+    | '4xl'
+    | '5xl'
+    | 'full';
   title?: string;
-  message?: string;
-  top?: string;
-  left?: string;
-  padding?: string;
-  height?: string;
-  cancleBtnText?: string;
-  confirmBtnText?: string;
   component?: () => JSX.Element;
-  onRequestClose?: () => void;
-  onRequestConfirm?: () => void;
-  onAfterOpen?: () => void;
-  onAfterClose?: () => void;
 }
 export type Modals = Map<string, ModalProps>;
