@@ -9,7 +9,7 @@ import tw, { styled } from 'twin.macro';
 import { WagmiConfig } from 'wagmi';
 
 import ModalProvider from '@/components/providers/ModalProvider';
-import { wagmiConfig } from '@/utils';
+import { wagmiConfig } from '@/config';
 
 const App = (props: AppProps) => {
   return (
