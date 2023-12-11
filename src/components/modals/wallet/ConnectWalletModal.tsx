@@ -2,23 +2,22 @@ import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { MdAccountBalanceWallet } from 'react-icons/md';
 import tw, { styled } from 'twin.macro';
-import { useAccount, useConnect } from 'wagmi';
 
 import Text from '@/components/common/Text';
 import useModal from '@/hooks/useModal';
+import useWallet from '@/hooks/useWallet';
 import { WalletType } from '@/types';
 
 const ICON_SIZE = 64;
 
 const ConnectWalletModal = () => {
-  const { connect, connectors, error, isLoading, pendingConnector } =
-    useConnect();
-  const { address } = useAccount();
+  const { account, connectors, pendingConnector, error, isLoading, connect } =
+    useWallet();
   const { closeModal } = useModal();
 
   useEffect(() => {
-    if (address) closeModal();
-  }, [address]);
+    if (account) closeModal();
+  }, [account]);
 
   return (
     <Wrapper>
