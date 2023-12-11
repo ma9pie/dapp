@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import tw, { styled } from 'twin.macro';
 import tailwindColors from 'tailwindcss/colors';
+import tw, { styled } from 'twin.macro';
+
 interface Props {
   [key: string]: any;
   className?: string;

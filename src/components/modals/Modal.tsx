@@ -1,6 +1,7 @@
 import { Modal, ModalBody, ModalContent } from '@nextui-org/react';
 import React from 'react';
 import tw, { styled } from 'twin.macro';
+
 import ModalHeader from '@/components/modals/ModalHeader';
 import useModal from '@/hooks/useModal';
 

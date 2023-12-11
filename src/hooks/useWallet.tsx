@@ -1,5 +1,6 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useAccount, useConnect, useDisconnect } from 'wagmi';
+
 import ConnectWalletModal from '@/components/modals/wallet/ConnectWalletModal';
 import useModal from '@/hooks/useModal';
 

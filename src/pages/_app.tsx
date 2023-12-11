@@ -6,8 +6,8 @@ import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 import { WagmiConfig } from 'wagmi';
-import Modal from '@/components/modals/Modal';
 
+import Modal from '@/components/modals/Modal';
 import { wagmiConfig } from '@/config';
 
 const App = (props: AppProps) => {

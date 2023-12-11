@@ -1,5 +1,6 @@
 import React from 'react';
 import tw, { styled } from 'twin.macro';
+
 import ConnectWalletBtn from '@/components/common/buttons/ConnectWalletBtn';
 import Text from '@/components/common/Text';
 import ThemeToggle from '@/components/common/ThemeToggle';

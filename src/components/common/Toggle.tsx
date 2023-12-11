@@ -1,5 +1,5 @@
 import { Switch } from '@nextui-org/react';
-import React, { ReactNode, ChangeEvent } from 'react';
+import React, { ChangeEvent, ReactNode } from 'react';
 
 interface Props {
   className?: string;
