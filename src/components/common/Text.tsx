@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
-import tailwindColors from 'tailwindcss/colors';
+import React from 'react';
 import tw, { styled } from 'twin.macro';
+
+import useTailwindColor from '@/hooks/useTailwindColor';
 
 interface Props {
   [key: string]: any;
@@ -53,18 +54,7 @@ const Text = ({
   children,
   ...props
 }: Props) => {
-  const color = useMemo(() => {
-    let code;
-    Object.keys(props).map((key) => {
-      const result = key.match(/([a-z]+)(\d+)/);
-      if (!result) return;
-      const [, color, number] = result;
-      const tailwindColor = (tailwindColors as any)[color];
-      if (!tailwindColor) return;
-      code = tailwindColor[number];
-    });
-    return code;
-  }, [props]);
+  const color = useTailwindColor(props);
 
   return (
     <P
