@@ -1,6 +1,7 @@
 import React from 'react';
 import tw, { styled } from 'twin.macro';
 
+import Flex from '@/components/common/Flex';
 import Text from '@/components/common/Text';
 import LinkBox from '@/components/home/LinkBox';
 import Layout from '@/components/layout/Layout';
@@ -8,7 +9,7 @@ import Layout from '@/components/layout/Layout';
 const Home = () => {
   return (
     <Layout>
-      <Container>
+      <Flex col justify="between" flex={1}>
         <div></div>
 
         <ContentWrapper>
@@ -46,16 +47,13 @@ const Home = () => {
             desc="Instantly deploy your Next.js site to a shareable URL with Vercel."
           ></LinkBox>
         </LinkContainer>
-      </Container>
+      </Flex>
     </Layout>
   );
 };
 
 export default Home;
 
-const Container = styled.div`
-  ${tw`flex flex-col justify-between flex-1`};
-`;
 const ContentWrapper = styled.div`
   ${tw`relative flex justify-center items-center min-h-[360px]`};
 `;
