@@ -2,8 +2,7 @@ import '@/styles/globals.css';
 
 import { NextUIProvider } from '@nextui-org/react';
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from 'next-themes';
-import { useTheme } from 'next-themes';
+import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 import { WagmiConfig } from 'wagmi';

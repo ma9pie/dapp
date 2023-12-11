@@ -78,7 +78,7 @@ const ConnectWalletModal = () => {
 
       <ErrorBox>
         {error && (
-          <Text sm medium red500>
+          <Text xs medium red500>
             {error.message}
           </Text>
         )}
@@ -107,5 +107,5 @@ const Grid = styled.div<{ size: number }>`
   grid-template-columns: repeat(auto-fill, 100px);
 `;
 const ErrorBox = styled.div`
-  ${tw`h-5`};
+  ${tw`min-h-[20px]`};
 `;
