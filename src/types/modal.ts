@@ -1,5 +1,6 @@
 export interface ModalProps {
   isOpen?: boolean;
+  isDismissable?: boolean;
   size?:
     | 'xs'
     | 'sm'

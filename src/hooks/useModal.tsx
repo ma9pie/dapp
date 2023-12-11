@@ -7,7 +7,7 @@ export default function useModal() {
   const [modal, setModal] = useAtom(modalAtom);
 
   const openModal = (props: ModalProps) => {
-    setModal({ ...props, isOpen: true });
+    setModal({ ...props, isOpen: true, isDismissable: true });
   };
 
   const closeModal = () => {

@@ -6,8 +6,8 @@ import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 import { WagmiConfig } from 'wagmi';
+import Modal from '@/components/modals/Modal';
 
-import ModalProvider from '@/components/providers/ModalProvider';
 import { wagmiConfig } from '@/config';
 
 const App = (props: AppProps) => {
@@ -15,9 +15,7 @@ const App = (props: AppProps) => {
     <WagmiConfig config={wagmiConfig}>
       <NextUIProvider>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <ModalProvider>
-            <Inner {...props}></Inner>
-          </ModalProvider>
+          <Inner {...props}></Inner>
         </ThemeProvider>
       </NextUIProvider>
     </WagmiConfig>
@@ -37,6 +35,7 @@ const Inner = ({ Component, pageProps }: AppProps) => {
 
   return (
     <Wrapper className={className}>
+      <Modal></Modal>
       <Component {...pageProps}></Component>
     </Wrapper>
   );
