@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import tailwindColors from 'tailwindcss/colors';
 import tw, { styled } from 'twin.macro';
 
@@ -53,19 +53,18 @@ const Text = ({
   children,
   ...props
 }: Props) => {
-  const [color, setColor] = useState<string>();
-
-  useEffect(() => {
+  const color = useMemo(() => {
+    let code;
     Object.keys(props).map((key) => {
       const result = key.match(/([a-z]+)(\d+)/);
       if (!result) return;
       const [, color, number] = result;
       const tailwindColor = (tailwindColors as any)[color];
       if (!tailwindColor) return;
-      const code = tailwindColor[number];
-      setColor(code);
+      code = tailwindColor[number];
     });
-  }, []);
+    return code;
+  }, [props]);
 
   return (
     <P
