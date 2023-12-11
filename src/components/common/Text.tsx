@@ -52,7 +52,7 @@ const Text = ({
   children,
   ...props
 }: Props) => {
-  const [color, setColor] = useState<string>('');
+  const [color, setColor] = useState<string | null>(null);
 
   useEffect(() => {
     Object.keys(props).map((key) => {
