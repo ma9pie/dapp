@@ -59,9 +59,9 @@ const Text = ({
       const result = key.match(/([a-z]+)(\d+)/);
       if (!result) return;
       const [, color, number] = result;
-      const _color = (tailwindColors as any)[color];
-      if (!_color) return;
-      const code = _color[number];
+      const tailwindColor = (tailwindColors as any)[color];
+      if (!tailwindColor) return;
+      const code = tailwindColor[number];
       setColor(code);
     });
   }, []);
