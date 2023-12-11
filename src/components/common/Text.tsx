@@ -1,6 +1,6 @@
-import classnames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
+import tailwindColors from 'tailwindcss/colors';
 interface Props {
   [key: string]: any;
   className?: string;
@@ -52,6 +52,20 @@ const Text = ({
   children,
   ...props
 }: Props) => {
+  const [color, setColor] = useState<string>('');
+
+  useEffect(() => {
+    Object.keys(props).map((key) => {
+      const result = key.match(/([a-z]+)(\d+)/);
+      if (!result) return;
+      const [, color, number] = result;
+      const _color = (tailwindColors as any)[color];
+      if (!_color) return;
+      const code = _color[number];
+      setColor(code);
+    });
+  }, []);
+
   return (
     <P
       className={className}
@@ -70,7 +84,7 @@ const Text = ({
       left={left}
       right={right}
       center={center}
-      {...props}
+      style={{ color: color }}
     >
       {children}
     </P>
