@@ -10,7 +10,7 @@ const useWallet = () => {
   const { address } = useAccount();
   const { openModal } = useModal();
 
-  const [account, setAccount] = useState();
+  const [account, setAccount] = useState<string | undefined>();
 
   useEffect(() => {
     setAccount(address);
