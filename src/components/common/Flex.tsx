@@ -12,6 +12,7 @@ interface Props {
   justify?: Position;
   items?: Position;
   children?: ReactNode;
+  onClick: () => void;
 }
 
 const Flex = ({
@@ -23,6 +24,7 @@ const Flex = ({
   justify,
   items,
   children,
+  onClick,
 }: Props) => {
   return (
     <Wrapper
@@ -35,6 +37,7 @@ const Flex = ({
       wrap={wrap}
       justify={justify}
       items={items}
+      onClick={onClick}
     >
       {children}
     </Wrapper>
