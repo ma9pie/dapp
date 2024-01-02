@@ -28,8 +28,8 @@ const ChainButton = () => {
         <>{chainName}</>
       ) : (
         <Flex
-          gap={4}
           items="center"
+          gap={4}
           onClick={() => switchNetwork?.(mainnet.id)}
         >
           <IoWarningOutline size={24}></IoWarningOutline>
@@ -43,5 +43,5 @@ const ChainButton = () => {
 export default ChainButton;
 
 const Wrapper = styled.div`
-  ${tw`border-2 border-solid rounded-lg px-2 py-1 cursor-pointer select-none`};
+  ${tw`w-fit border-2 border-solid rounded-lg px-2 py-1 cursor-pointer select-none`};
 `;
