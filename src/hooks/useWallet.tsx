@@ -1,11 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   useAccount,
+  useBalance,
   useConnect,
   useDisconnect,
   useNetwork,
   useSwitchNetwork,
 } from 'wagmi';
+
 import ConnectWalletModal from '@/components/modals/wallet/ConnectWalletModal';
 import useModal from '@/hooks/useModal';
 
@@ -14,6 +16,7 @@ const useWallet = () => {
     useConnect();
   const { disconnect } = useDisconnect();
   const { address } = useAccount();
+  const {} = useBalance({ address: address });
   const { chain, chains } = useNetwork();
   const { switchNetwork } = useSwitchNetwork();
   const { openModal } = useModal();
