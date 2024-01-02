@@ -33,7 +33,7 @@ const ChainButton = () => {
           onClick={() => switchNetwork?.(mainnet.id)}
         >
           <IoWarningOutline size={24}></IoWarningOutline>
-          <Text>Invalid network</Text>
+          <Text nowrap>Invalid network</Text>
         </Flex>
       )}
     </Wrapper>

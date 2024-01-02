@@ -22,6 +22,14 @@ interface Props {
   black?: boolean;
   white?: boolean;
 
+  flex?: number;
+  inline?: boolean;
+  nowrap?: boolean;
+  underline?: boolean;
+  breakAll?: boolean;
+  pointer?: boolean;
+  hidden?: boolean;
+
   left?: boolean;
   right?: boolean;
   center?: boolean;
@@ -47,6 +55,14 @@ const Text = ({
   black,
   white,
 
+  flex,
+  inline,
+  nowrap,
+  underline,
+  breakAll,
+  pointer,
+  hidden,
+
   left,
   right,
   center,
@@ -71,6 +87,12 @@ const Text = ({
       bold={bold}
       black={black}
       white={white}
+      inline={inline}
+      nowrap={nowrap}
+      underline={underline}
+      breakAll={breakAll}
+      pointer={pointer}
+      hidden={hidden}
       left={left}
       right={right}
       center={center}
@@ -98,6 +120,13 @@ const P = styled.p<Props>`
 
   ${(props) => props.black && tw`text-black`};
   ${(props) => props.white && tw`text-white`};
+
+  ${(props) => props.inline && tw`inline`};
+  ${(props) => props.nowrap && tw`whitespace-nowrap`};
+  ${(props) => props.underline && tw`underline`};
+  ${(props) => props.breakAll && tw`break-all`};
+  ${(props) => props.pointer && tw`cursor-pointer`};
+  ${(props) => props.hidden && tw`hidden`};
 
   ${(props) => props.left && tw`text-left`};
   ${(props) => props.right && tw`text-right`};
