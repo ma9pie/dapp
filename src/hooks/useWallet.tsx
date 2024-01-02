@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useAccount, useConnect, useDisconnect } from 'wagmi';
-
+import { useNetwork, useSwitchNetwork } from 'wagmi';
 import ConnectWalletModal from '@/components/modals/wallet/ConnectWalletModal';
 import useModal from '@/hooks/useModal';
 
@@ -9,6 +9,8 @@ const useWallet = () => {
     useConnect();
   const { disconnect } = useDisconnect();
   const { address } = useAccount();
+  const { chain, chains } = useNetwork();
+  const { switchNetwork } = useSwitchNetwork();
   const { openModal } = useModal();
 
   const [account, setAccount] = useState<string | undefined>();
@@ -26,12 +28,15 @@ const useWallet = () => {
 
   return {
     account,
+    chain,
+    chains,
     connectors,
     pendingConnector,
     error,
     isLoading,
     connect,
     disconnect,
+    switchNetwork,
     openConnectWalletModal,
   };
 };

@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { IoWarningOutline } from 'react-icons/io5';
 import tw, { styled } from 'twin.macro';
-import { useNetwork, useSwitchNetwork } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
-
+import useWallet from '@/hooks/useWallet';
 import Flex from '@/components/common/Flex';
 import Text from '@/components/common/Text';
 
 const ChainButton = () => {
-  const { chain, chains } = useNetwork();
-  const { switchNetwork } = useSwitchNetwork();
+  const { chain, chains, switchNetwork } = useWallet();
 
   const [chainName, setChainName] = useState('');
 
   const id = chain?.id;
 
   useEffect(() => {
-    if (!id) {
-      setChainName('');
-      return;
-    }
     const currentChain = chains.find((item) => item.id === id);
     if (currentChain) {
       setChainName(currentChain.name);
@@ -27,8 +21,6 @@ const ChainButton = () => {
       setChainName('');
     }
   }, [id]);
-
-  if (!chain) return null;
 
   return (
     <Wrapper>
