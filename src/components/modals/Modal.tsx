@@ -4,10 +4,11 @@ import tw, { styled } from 'twin.macro';
 
 import ModalHeader from '@/components/modals/ModalHeader';
 import useModal from '@/hooks/useModal';
+import { ModalProps } from '@/types';
 
-const Component = () => {
-  const { modal, closeModal } = useModal();
-  const { isOpen, isDismissable, size, title, component } = modal;
+const Component = (props: ModalProps) => {
+  const { closeModal } = useModal();
+  const { isOpen, isDismissable, size, title, component } = props;
 
   return (
     <Container>

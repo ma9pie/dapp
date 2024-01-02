@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 import { WagmiConfig } from 'wagmi';
 
-import Modal from '@/components/modals/Modal';
+import ModalProvider from '@/components/providers/ModalProvider';
 import { wagmiConfig } from '@/config';
 
 const App = (props: AppProps) => {
@@ -35,8 +35,9 @@ const Inner = ({ Component, pageProps }: AppProps) => {
 
   return (
     <Wrapper className={className}>
-      <Modal></Modal>
-      <Component {...pageProps}></Component>
+      <ModalProvider>
+        <Component {...pageProps}></Component>
+      </ModalProvider>
     </Wrapper>
   );
 };

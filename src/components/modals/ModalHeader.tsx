@@ -17,7 +17,7 @@ const ModalHeader = ({ title }: Props) => {
       <Text xl semibold>
         {title}
       </Text>
-      <IconWrapper onClick={closeModal}>
+      <IconWrapper onClick={() => closeModal()}>
         <IoClose size={32}></IoClose>
       </IconWrapper>
     </Wrapper>

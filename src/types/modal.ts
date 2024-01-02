@@ -1,4 +1,5 @@
 export interface ModalProps {
+  id?: string;
   isOpen?: boolean;
   isDismissable?: boolean;
   size?:
@@ -13,6 +14,7 @@ export interface ModalProps {
     | '5xl'
     | 'full';
   title?: string;
+  createdAt?: number;
   component?: () => JSX.Element;
 }
 export type Modals = Map<string, ModalProps>;

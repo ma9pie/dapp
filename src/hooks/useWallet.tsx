@@ -19,7 +19,6 @@ const useWallet = () => {
 
   const openConnectWalletModal = useCallback(() => {
     openModal({
-      size: 'sm',
       title: 'Connect Wallet',
       component: () => <ConnectWalletModal></ConnectWalletModal>,
     });
