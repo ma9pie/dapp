@@ -1,6 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useAccount, useConnect, useDisconnect } from 'wagmi';
-import { useNetwork, useSwitchNetwork } from 'wagmi';
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useNetwork,
+  useSwitchNetwork,
+} from 'wagmi';
 import ConnectWalletModal from '@/components/modals/wallet/ConnectWalletModal';
 import useModal from '@/hooks/useModal';
 
