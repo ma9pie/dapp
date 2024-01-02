@@ -19,9 +19,9 @@ const Layout = ({ children }: Props) => {
 export default Layout;
 
 const Wrapper = styled.main`
-  ${tw`flex flex-col min-h-screen p-4`};
-  ${tw`sm:p-6`};
+  ${tw`flex flex-col min-h-screen`};
 `;
 const Content = styled.div`
   ${tw`flex flex-col flex-1 p-4`};
+  ${tw`sm:p-6`};
 `;
