@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { IoWarningOutline } from 'react-icons/io5';
 import tw, { styled } from 'twin.macro';
 import { mainnet } from 'wagmi/chains';
-import useWallet from '@/hooks/useWallet';
+
 import Flex from '@/components/common/Flex';
 import Text from '@/components/common/Text';
+import useWallet from '@/hooks/useWallet';
 
 const ChainButton = () => {
   const { chain, chains, switchNetwork } = useWallet();
